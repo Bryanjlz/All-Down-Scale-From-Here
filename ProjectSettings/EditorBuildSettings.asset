@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GoodPatchNotes.unity
     guid: 0b95c5dac67e94a4cbf1f5f0eaa51268
+  - enabled: 1
+    path: Assets/Scenes/MonitorScene.unity
+    guid: 0ee9b1e4dec3c294f9dd43219f708cb6
   m_configObjects: {}

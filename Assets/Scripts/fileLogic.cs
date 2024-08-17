@@ -8,6 +8,9 @@ public class openFileForGame : MonoBehaviour
     public bool hovered = false;
     private float doubleClickTimer = 0;
 
+    [SerializeField]
+    AdditiveSceneChanger additiveSceneChanger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,7 @@ public class openFileForGame : MonoBehaviour
         if (doubleClickTimer > 0)
         {
             Debug.Log("Open the file");
+            additiveSceneChanger.LoadScene();
             selected = false;
         } else
         {
