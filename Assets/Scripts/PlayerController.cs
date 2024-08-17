@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 	// Editor variables
 	public float jumpStrength;
+	public float shortHopSpeed;
 	public float moveSpeed;
 	public Vector2 respawnPoint;
+	public Camera worldCamera;
 
 	bool isGrounded;
 	Transform transformRef;
@@ -45,8 +48,13 @@ public class PlayerController : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
-			rigidbodyRef.AddForce(new Vector2(0, jumpStrength));
+			rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, jumpStrength);
+		} else if (Input.GetKeyUp(KeyCode.UpArrow) && rigidbodyRef.velocity.y > shortHopSpeed) {
+			rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, shortHopSpeed);
 		}
+
+		worldCamera.transform.position =
+			new Vector3(transformRef.position.x, transformRef.position.y, worldCamera.transform.position.z);
     }
 
 	private void OnTriggerEnter2D(Collider2D other) {
