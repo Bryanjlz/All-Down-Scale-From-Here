@@ -6688,8 +6688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22a5407aacfbf94a865e95eac3cc997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 8
-  shortHopSpeed: 2
+  jumpStrength: 8.2
+  shortHopSpeed: 1
   moveSpeed: 8
   respawnPoint: {x: 0, y: 0}
   worldCamera: {fileID: 100147008}

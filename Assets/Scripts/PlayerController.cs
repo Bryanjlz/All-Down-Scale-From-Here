@@ -65,7 +65,12 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void updateIsGrounded() {
-		isGrounded = Physics2D.Raycast(transformRef.position, Vector2.down, colliderRef.bounds.extents.y + 0.1f).collider != null;
+		RaycastHit2D leftCast = Physics2D.Raycast(transformRef.position - new Vector3(colliderRef.bounds.extents.x, 0, 0), Vector2.down, colliderRef.bounds.extents.y + 0.1f);
+		RaycastHit2D midCast = Physics2D.Raycast(transformRef.position, Vector2.down, colliderRef.bounds.extents.y + 0.1f);
+		RaycastHit2D rightCast = Physics2D.Raycast(transformRef.position + new Vector3(colliderRef.bounds.extents.x, 0, 0), Vector2.down, colliderRef.bounds.extents.y + 0.1f);
+
+
+		isGrounded = leftCast.collider != null || rightCast.collider != null || midCast.collider != null;
 	}
 
 	public void updateRespawnPoint(Vector2 newLocation) {
