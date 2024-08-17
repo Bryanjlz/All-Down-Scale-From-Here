@@ -18,7 +18,6 @@ public class Checkpoint : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		// If player
-		Debug.Log(other);
 		PlayerController player = other.GetComponent<PlayerController>();
 		if (player != null) {
 			player.updateRespawnPoint(transform.position);
