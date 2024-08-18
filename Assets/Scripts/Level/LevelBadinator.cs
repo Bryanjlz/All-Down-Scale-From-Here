@@ -28,6 +28,7 @@ public class LevelBadinator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        badness = GameObject.FindGameObjectWithTag("DayManager").GetComponent<TrackDay>().currentDay;
 		setLevelBadness(badness);
     }
 
