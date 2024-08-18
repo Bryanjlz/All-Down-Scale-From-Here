@@ -53,6 +53,13 @@ public class PlayerController : MonoBehaviour
 			rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, shortHopSpeed);
 		}
 
+		// Higher falling speed
+		if (rigidbodyRef.velocity.y < 0) {
+			rigidbodyRef.gravityScale = 2.0f;
+		} else {
+			rigidbodyRef.gravityScale = 1.0f;
+		}
+
 		worldCamera.transform.position =
 			new Vector3(transformRef.position.x, transformRef.position.y, worldCamera.transform.position.z);
     }
