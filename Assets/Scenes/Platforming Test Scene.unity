@@ -7286,6 +7286,7 @@ GameObject:
   - component: {fileID: 809077701}
   - component: {fileID: 809077704}
   - component: {fileID: 809077705}
+  - component: {fileID: 809077707}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -7362,6 +7363,8 @@ MonoBehaviour:
   moveSpeed: 8
   respawnPoint: {x: 0, y: 0}
   deathTimeout: 0.25
+  isGrounded: 0
+  animatorRef: {fileID: 809077707}
 --- !u!4 &809077703
 Transform:
   m_ObjectHideFlags: 0
@@ -7464,6 +7467,28 @@ MonoBehaviour:
   cooldown: 0.25
   bulletSpeed: 20
   bulletPrefab: {fileID: 494460125574419670, guid: 0831fb297b45e8946a3f5038edcb6a36, type: 3}
+  animatorRef: {fileID: 809077707}
+--- !u!95 &809077707
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809077699}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c869e6a32f7d3ed4d82aa7d76d81dbe1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &816863573
 GameObject:
   m_ObjectHideFlags: 3

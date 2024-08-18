@@ -13,12 +13,15 @@ public class PlayerController : MonoBehaviour
 	public Vector2 respawnPoint;
 	public float deathTimeout = 0.5f;
 
+	[SerializeField]
 	bool isGrounded;
 	Transform transformRef;
 	Collider2D colliderRef;
 	Rigidbody2D rigidbodyRef;
+	[SerializeField]
+	Animator animatorRef;
 	float uncontrolledTime = 0;
-
+	
 	bool isFacingRight = true;
 
     // Start is called before the first frame update
@@ -35,7 +38,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		updateIsGrounded();
+		UpdateIsGrounded();
+		animatorRef.SetBool("isGrounded", isGrounded);
 		if (uncontrolledTime > 0) {
 			uncontrolledTime -= Time.deltaTime;
 			if (uncontrolledTime <= 0) {
@@ -43,17 +47,22 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-
 		rigidbodyRef.velocity = new Vector2(0, rigidbodyRef.velocity.y);
 
 		if (uncontrolledTime <= 0) {
 			if (Input.GetKey(KeyCode.LeftArrow)) {
 				rigidbodyRef.velocity = new Vector2(-moveSpeed, rigidbodyRef.velocity.y);
+				if (isFacingRight) {
+					FlipDirection();
+				}
 				isFacingRight = false;
 			}
 
 			if (Input.GetKey(KeyCode.RightArrow)) {
 				rigidbodyRef.velocity = new Vector2(moveSpeed, rigidbodyRef.velocity.y);
+				if (!isFacingRight) {
+					FlipDirection();
+				}
 				isFacingRight = true;
 			}
 
@@ -63,6 +72,9 @@ public class PlayerController : MonoBehaviour
 				rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, shortHopSpeed);
 			}
 		}
+		
+		// Update speed for animator
+		animatorRef.SetFloat("xVelocity", Mathf.Abs(rigidbodyRef.velocity.x));
 
 		// Higher falling speed
 		if (rigidbodyRef.velocity.y < 0) {
@@ -81,16 +93,16 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	void updateIsGrounded() {
-		RaycastHit2D leftCast = Physics2D.Raycast(transformRef.position - new Vector3(colliderRef.bounds.extents.x, 0, 0), Vector2.down, colliderRef.bounds.extents.y + 0.1f);
-		RaycastHit2D midCast = Physics2D.Raycast(transformRef.position, Vector2.down, colliderRef.bounds.extents.y + 0.1f);
-		RaycastHit2D rightCast = Physics2D.Raycast(transformRef.position + new Vector3(colliderRef.bounds.extents.x, 0, 0), Vector2.down, colliderRef.bounds.extents.y + 0.1f);
+	void UpdateIsGrounded() {
+		RaycastHit2D leftCast = Physics2D.Raycast(transformRef.position - new Vector3(colliderRef.bounds.extents.x, 0, 0), Vector2.down, colliderRef.bounds.extents.y + 0.1f, LayerMask.GetMask("World"));
+		RaycastHit2D midCast = Physics2D.Raycast(transformRef.position, Vector2.down, colliderRef.bounds.extents.y + 0.1f, LayerMask.GetMask("World"));
+		RaycastHit2D rightCast = Physics2D.Raycast(transformRef.position + new Vector3(colliderRef.bounds.extents.x, 0, 0), Vector2.down, colliderRef.bounds.extents.y + 0.1f, LayerMask.GetMask("World"));
 
 
 		isGrounded = leftCast.collider != null || rightCast.collider != null || midCast.collider != null;
 	}
 
-	public void updateRespawnPoint(Vector2 newLocation) {
+	public void UpdateRespawnPoint(Vector2 newLocation) {
 		respawnPoint = newLocation;
 	}
 
@@ -98,7 +110,13 @@ public class PlayerController : MonoBehaviour
 	/// Returns 1 if facing right, -1 if facing left.
 	/// Use for math based on what direction the player is facing (gun).
 	/// </summary>
-	public int getFacingDirection() {
+	public int GetFacingDirection() {
 		return isFacingRight ? 1 : -1;
+	}
+
+	public void FlipDirection() {
+		Vector3 scale = transformRef.localScale;
+		scale.x *= -1;
+		transformRef.localScale = scale;
 	}
 }

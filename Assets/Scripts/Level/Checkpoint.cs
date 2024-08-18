@@ -20,7 +20,7 @@ public class Checkpoint : MonoBehaviour
 		// If player
 		PlayerController player = other.GetComponent<PlayerController>();
 		if (player != null) {
-			player.updateRespawnPoint(transform.position);
+			player.UpdateRespawnPoint(transform.position);
 		}
 	}
 }

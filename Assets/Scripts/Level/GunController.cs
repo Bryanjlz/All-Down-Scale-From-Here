@@ -12,9 +12,11 @@ public class GunController : MonoBehaviour
 
 	private float internalCooldown;
 	private PlayerController player;
-
-
-    // Start is called before the first frame update
+	
+	[SerializeField]
+	Animator animatorRef;
+	
+	// Start is called before the first frame update
     void Start()
     {
 		player = GetComponent<PlayerController>();
@@ -31,9 +33,12 @@ public class GunController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space) && internalCooldown <= 0) {
 			internalCooldown = cooldown;
-			GameObject go = Instantiate(bulletPrefab.gameObject, transform.position, Quaternion.identity);
+			Vector3 position = transform.position;
+			position.y -= 0.15f;
+			position.x += 0.5f * player.GetFacingDirection();
+			GameObject go = Instantiate(bulletPrefab.gameObject, position, Quaternion.identity);
 			Bullet bullet = go.GetComponent<Bullet>();
-			bullet.SetVelocity(new Vector3(bulletSpeed * player.getFacingDirection(), 0, 0));
+			bullet.SetVelocity(new Vector3(bulletSpeed * player.GetFacingDirection(), 0, 0));
 		}
 	}
 }
