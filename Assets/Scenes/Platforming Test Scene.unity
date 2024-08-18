@@ -8994,7 +8994,7 @@ MonoBehaviour:
   ground: {fileID: 88157550}
   startingCheckpoint: {fileID: 1184097650}
   checkpointParent: {fileID: 1172480029}
-  badness: 0
+  badness: 2
 --- !u!4 &1067743334
 Transform:
   m_ObjectHideFlags: 0

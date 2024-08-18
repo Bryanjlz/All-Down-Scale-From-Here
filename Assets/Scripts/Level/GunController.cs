@@ -31,7 +31,6 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update() {
 		if (internalCooldown > 0) {
-			animatorRef.SetBool("isShooting", false);
 			internalCooldown -= Time.deltaTime;
 		}
 
@@ -39,7 +38,7 @@ public class GunController : MonoBehaviour
 			internalCooldown = cooldown;
 			Vector3 position = transform.position;
 			if (isShootingAllowed) {
-				animatorRef.SetBool("isShooting", true);
+				animatorRef.SetTrigger("shoot");
 				position.y -= 0.15f;
 				position.x += 0.5f * player.GetFacingDirection();
 				GameObject go = Instantiate(bulletPrefab.gameObject, position, Quaternion.identity);
@@ -47,8 +46,9 @@ public class GunController : MonoBehaviour
 				bullet.SetVelocity(new Vector3(bulletSpeed * player.GetFacingDirection(), 0, 0));
 			} else {
 				// Pistol whip
+				animatorRef.SetTrigger("whip");
 				position.y -= 0.15f;
-				position.x += 1f * player.GetFacingDirection();
+				position.x += .7f * player.GetFacingDirection();
 				// Keep pistol whip attached to player
 				GameObject go = Instantiate(pistolWhipPrefab.gameObject, position, Quaternion.identity, transform);
 				PistolWhip attack = go.GetComponent<PistolWhip>();

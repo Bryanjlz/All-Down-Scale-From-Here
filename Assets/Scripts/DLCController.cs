@@ -12,13 +12,13 @@ public class DLCController : MonoBehaviour {
     [SerializeField]
     RectTransform contentTransform;
     [SerializeField] 
-    GameObject ComingSoonText;
+    GameObject comingSoonText;
     
     void Start()
     {
         day = GameObject.FindGameObjectWithTag("DayManager").GetComponent<TrackDay>().currentDay;
         if (day == 0) {
-            ComingSoonText.SetActive(true);
+            comingSoonText.SetActive(true);
         } else {
             // Show slider when there are more than 4 items
             if (day >= 5) {
