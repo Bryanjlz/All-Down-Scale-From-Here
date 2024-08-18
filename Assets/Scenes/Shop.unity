@@ -867,7 +867,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 925288859}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99992794
+  m_Size: 0.99995965
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1062,7 +1062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00002891148}
+  m_AnchoredPosition: {x: 0, y: 0.000036063106}
   m_SizeDelta: {x: 0, y: 120}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1430729270
@@ -1400,7 +1400,7 @@ MonoBehaviour:
   - {fileID: 1280392705}
   slider: {fileID: 1747759410}
   contentTransform: {fileID: 1420353950}
-  ComingSoonText: {fileID: 158798256}
+  comingSoonText: {fileID: 158798256}
 --- !u!1 &1515019269
 GameObject:
   m_ObjectHideFlags: 0
