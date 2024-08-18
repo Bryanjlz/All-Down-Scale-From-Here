@@ -5,10 +5,11 @@ using UnityEngine;
 public class FlyingEnemy : MonoBehaviour {
 	bool didReflect = false;
 	public Vector3 velocity;
+	public SpriteRenderer spriteRenderer;
 
 	// Start is called before the first frame update
 	void Start() {
-
+		spriteRenderer.flipX = velocity.x < 0;
 	}
 
 	// Update is called once per frame
@@ -24,6 +25,7 @@ public class FlyingEnemy : MonoBehaviour {
 			transform.position -= velocity * Time.deltaTime;
 			velocity *= -1;
 			didReflect = true;
+			spriteRenderer.flipX = velocity.x < 0;
 		} else if (layer == 9) {
 			// Bullet collision
 			Destroy(this.gameObject);
