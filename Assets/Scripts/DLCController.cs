@@ -16,6 +16,7 @@ public class DLCController : MonoBehaviour {
     
     void Start()
     {
+        day = GameObject.FindGameObjectWithTag("DayManager").GetComponent<TrackDay>().currentDay;
         if (day == 0) {
             ComingSoonText.SetActive(true);
         } else {
