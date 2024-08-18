@@ -10,6 +10,7 @@ public class GunController : MonoBehaviour
 
 	public Bullet bulletPrefab;
 	public PistolWhip pistolWhipPrefab;
+	public GameObject gunVisualRef;
 
 	private float internalCooldown;
 	private PlayerController player;
