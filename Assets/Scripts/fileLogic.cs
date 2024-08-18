@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class openFileForGame : MonoBehaviour
+public class OpenFileForGame : MonoBehaviour
 {
     public float doubleClickWindow = 0.5f;
     public SpriteRenderer mySpriteRenderer;
     public bool selected = false;
     public bool hovered = false;
     private float doubleClickTimer = 0;
+
+    public GameObject shouldShowDesktop;
 
     [SerializeField]
     AdditiveSceneChanger additiveSceneChanger;
@@ -42,6 +44,7 @@ public class openFileForGame : MonoBehaviour
         {
             Debug.Log("Open the file");
             additiveSceneChanger.LoadScene();
+            shouldShowDesktop.SetActive(false);
             selected = false;
         } else
         {
@@ -59,5 +62,10 @@ public class openFileForGame : MonoBehaviour
     void OnMouseExit()
     {
         hovered = false;
+    }
+
+    private void OnMouseDrag()
+    {
+        Debug.Log("Dragging!");
     }
 }
