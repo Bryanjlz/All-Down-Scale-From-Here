@@ -19,7 +19,7 @@ public class AdditiveSceneChanger : MonoBehaviour
     }
 
     public void ChangeScene () {
-        UnloadScene();
         LoadScene();
+        UnloadScene();
     }
 }
