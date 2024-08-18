@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,12 +11,13 @@ public class PlayerController : MonoBehaviour
 	public float shortHopSpeed;
 	public float moveSpeed;
 	public Vector2 respawnPoint;
-	public Camera worldCamera;
+	public float deathTimeout = 0.5f;
 
 	bool isGrounded;
 	Transform transformRef;
 	Collider2D colliderRef;
 	Rigidbody2D rigidbodyRef;
+	float uncontrolledTime = 0;
 
 	bool isFacingRight = true;
 
@@ -34,23 +36,32 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 		updateIsGrounded();
+		if (uncontrolledTime > 0) {
+			uncontrolledTime -= Time.deltaTime;
+			if (uncontrolledTime <= 0) {
+				GetComponent<SpriteRenderer>().enabled = true;
+			}
+		}
+
 
 		rigidbodyRef.velocity = new Vector2(0, rigidbodyRef.velocity.y);
 
-		if (Input.GetKey(KeyCode.LeftArrow)) {
-			rigidbodyRef.velocity = new Vector2(-moveSpeed, rigidbodyRef.velocity.y);
-			isFacingRight = false;
-		}
+		if (uncontrolledTime <= 0) {
+			if (Input.GetKey(KeyCode.LeftArrow)) {
+				rigidbodyRef.velocity = new Vector2(-moveSpeed, rigidbodyRef.velocity.y);
+				isFacingRight = false;
+			}
 
-		if (Input.GetKey(KeyCode.RightArrow)) {
-			rigidbodyRef.velocity = new Vector2(moveSpeed, rigidbodyRef.velocity.y);
-			isFacingRight = true;
-		}
+			if (Input.GetKey(KeyCode.RightArrow)) {
+				rigidbodyRef.velocity = new Vector2(moveSpeed, rigidbodyRef.velocity.y);
+				isFacingRight = true;
+			}
 
-		if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
-			rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, jumpStrength);
-		} else if (Input.GetKeyUp(KeyCode.UpArrow) && rigidbodyRef.velocity.y > shortHopSpeed) {
-			rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, shortHopSpeed);
+			if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
+				rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, jumpStrength);
+			} else if (Input.GetKeyUp(KeyCode.UpArrow) && rigidbodyRef.velocity.y > shortHopSpeed) {
+				rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, shortHopSpeed);
+			}
 		}
 
 		// Higher falling speed
@@ -59,15 +70,14 @@ public class PlayerController : MonoBehaviour
 		} else {
 			rigidbodyRef.gravityScale = 1.0f;
 		}
-
-		worldCamera.transform.position =
-			new Vector3(transformRef.position.x, transformRef.position.y, worldCamera.transform.position.z);
     }
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.layer == 8) {
 			rigidbodyRef.velocity = Vector2.zero;
 			transform.SetPositionAndRotation(new Vector3(respawnPoint.x, respawnPoint.y, 0), Quaternion.identity);
+			uncontrolledTime = deathTimeout;
+			GetComponent<SpriteRenderer>().enabled = false;
 		}
 	}
 
