@@ -31,6 +31,7 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update() {
 		if (internalCooldown > 0) {
+			animatorRef.SetBool("isShooting", false);
 			internalCooldown -= Time.deltaTime;
 		}
 
@@ -38,6 +39,7 @@ public class GunController : MonoBehaviour
 			internalCooldown = cooldown;
 			Vector3 position = transform.position;
 			if (isShootingAllowed) {
+				animatorRef.SetBool("isShooting", true);
 				position.y -= 0.15f;
 				position.x += 0.5f * player.GetFacingDirection();
 				GameObject go = Instantiate(bulletPrefab.gameObject, position, Quaternion.identity);

@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
 	Collider2D colliderRef;
 	Rigidbody2D rigidbodyRef;
 	[SerializeField]
-	Animator animatorRef;
+	Animator playerAnimatorRef;
+	[SerializeField]
+	Animator gunAnimatorRef;
 	float uncontrolledTime = 0;
 	
 	bool isFacingRight = true;
@@ -39,7 +41,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 		UpdateIsGrounded();
-		animatorRef.SetBool("isGrounded", isGrounded);
+		playerAnimatorRef.SetBool("isGrounded", isGrounded);
+		gunAnimatorRef.SetBool("isGrounded", isGrounded);
 		if (uncontrolledTime > 0) {
 			uncontrolledTime -= Time.deltaTime;
 			if (uncontrolledTime <= 0) {
@@ -74,7 +77,7 @@ public class PlayerController : MonoBehaviour
 		}
 		
 		// Update speed for animator
-		animatorRef.SetFloat("xVelocity", Mathf.Abs(rigidbodyRef.velocity.x));
+		playerAnimatorRef.SetFloat("xVelocity", Mathf.Abs(rigidbodyRef.velocity.x));
 
 		// Higher falling speed
 		if (rigidbodyRef.velocity.y < 0) {
