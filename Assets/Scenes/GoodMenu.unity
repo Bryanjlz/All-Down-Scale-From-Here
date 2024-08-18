@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c574f75be9fdc442bf9c81fdafd812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: GoodDLCShop
+  NextScene: Shop
   SceneToUnload: 
 --- !u!1 &1515019269
 GameObject:
