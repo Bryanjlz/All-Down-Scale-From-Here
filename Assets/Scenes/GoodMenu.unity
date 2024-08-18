@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c574f75be9fdc442bf9c81fdafd812e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: 
+  NextScene: Platforming Test Scene
   SceneToUnload: GoodMenu
 --- !u!1 &1487177619
 GameObject:
@@ -1402,7 +1402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2091679030
 RectTransform:
   m_ObjectHideFlags: 0
