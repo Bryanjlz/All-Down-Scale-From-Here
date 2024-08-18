@@ -7467,6 +7467,7 @@ MonoBehaviour:
   cooldown: 0.25
   bulletSpeed: 20
   bulletPrefab: {fileID: 494460125574419670, guid: 0831fb297b45e8946a3f5038edcb6a36, type: 3}
+  pistolWhipPrefab: {fileID: 7300026693957734692, guid: 5732eb66c64f9ea4092b4618c5892666, type: 3}
   animatorRef: {fileID: 809077707}
 --- !u!95 &809077707
 Animator:
@@ -16112,8 +16113,8 @@ SceneRoots:
   - {fileID: 100147009}
   - {fileID: 1778011729}
   - {fileID: 956006103}
+  - {fileID: 1067743334}
   - {fileID: 809077703}
   - {fileID: 1317275308}
   - {fileID: 1172480030}
   - {fileID: 786919006}
-  - {fileID: 1067743334}

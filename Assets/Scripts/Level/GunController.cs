@@ -9,9 +9,11 @@ public class GunController : MonoBehaviour
 	public float bulletSpeed;
 
 	public Bullet bulletPrefab;
+	public PistolWhip pistolWhipPrefab;
 
 	private float internalCooldown;
 	private PlayerController player;
+	private bool isShootingAllowed = true;
 	
 	[SerializeField]
 	Animator animatorRef;
@@ -34,11 +36,24 @@ public class GunController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) && internalCooldown <= 0) {
 			internalCooldown = cooldown;
 			Vector3 position = transform.position;
-			position.y -= 0.15f;
-			position.x += 0.5f * player.GetFacingDirection();
-			GameObject go = Instantiate(bulletPrefab.gameObject, position, Quaternion.identity);
-			Bullet bullet = go.GetComponent<Bullet>();
-			bullet.SetVelocity(new Vector3(bulletSpeed * player.GetFacingDirection(), 0, 0));
+			if (isShootingAllowed) {
+				position.y -= 0.15f;
+				position.x += 0.5f * player.GetFacingDirection();
+				GameObject go = Instantiate(bulletPrefab.gameObject, position, Quaternion.identity);
+				Bullet bullet = go.GetComponent<Bullet>();
+				bullet.SetVelocity(new Vector3(bulletSpeed * player.GetFacingDirection(), 0, 0));
+			} else {
+				// Pistol whip
+				position.y -= 0.15f;
+				position.x += 1f * player.GetFacingDirection();
+				// Keep pistol whip attached to player
+				GameObject go = Instantiate(pistolWhipPrefab.gameObject, position, Quaternion.identity, transform);
+				PistolWhip attack = go.GetComponent<PistolWhip>();
+			}
 		}
+	}
+
+	public void RemoveBullets() {
+		isShootingAllowed = false;
 	}
 }

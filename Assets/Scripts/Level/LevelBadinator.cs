@@ -33,13 +33,13 @@ public class LevelBadinator : MonoBehaviour
 
 	public void setLevelBadness(int badness) {
 		if (badness >= LevelBadness.NO_BULLETS) {
-			Destroy(player.GetComponent<GunController>());
+			player.GetComponent<GunController>().RemoveBullets();
 		}
 		if (badness >= LevelBadness.NO_GROUND) {
 			Destroy(ground);
 		}
 		if (badness >= LevelBadness.NO_GUN) {
-
+			Destroy(player.GetComponent<GunController>());
 		}
 		if (badness >= LevelBadness.BAD_GRAPHICS) {
 

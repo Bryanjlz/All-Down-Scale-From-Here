@@ -6,12 +6,20 @@ public class Bullet : MonoBehaviour
 {
 	Vector3 velocity;
 	
+	// I really hope we don't need bullets to last more than 10 seconds
+	public float duration = 10.0f;
+	private float lifespan = 0;
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
 		transform.Translate(velocity * Time.deltaTime);
-    }
+
+		if (lifespan > duration) {
+			Destroy(this.gameObject);
+		}
+		lifespan += Time.deltaTime;
+	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		DestroyOnHit(collision.gameObject);
