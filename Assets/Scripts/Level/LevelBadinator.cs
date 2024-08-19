@@ -22,6 +22,7 @@ public class LevelBadinator : MonoBehaviour
 	// ...avoid destroying the starting checkpoint
 	public GameObject startingCheckpoint;
 	public GameObject checkpointParent;
+	public Animator gunAnimatorRef;
 
 	public int badness;
 
@@ -40,6 +41,7 @@ public class LevelBadinator : MonoBehaviour
 			Destroy(ground);
 		}
 		if (badness >= LevelBadness.NO_GUN) {
+			gunAnimatorRef.SetBool("hasGun", false);
 			Destroy(player.GetComponent<GunController>());
 		}
 		if (badness >= LevelBadness.BAD_GRAPHICS) {

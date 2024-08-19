@@ -1426,7 +1426,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -1441,7 +1441,7 @@ Transform:
   m_GameObject: {fileID: 100147006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.111106, y: 2.75, z: -10}
+  m_LocalPosition: {x: 6.121254, y: 2.75, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8415,7 +8415,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 46
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 30
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9532,8 +9532,8 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 2
     m_Data: {fileID: -1453609554, guid: 34fbab8d82e80a94497d071f16cf5602, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 366708765, guid: 34fbab8d82e80a94497d071f16cf5602, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 184187326, guid: 34fbab8d82e80a94497d071f16cf5602, type: 3}
   - m_RefCount: 50
@@ -9590,8 +9590,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 801161200, guid: 34fbab8d82e80a94497d071f16cf5602, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 366708765, guid: 34fbab8d82e80a94497d071f16cf5602, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -499982058, guid: 4e62f23068a8fe94d85c9d4bfb7f0bd4, type: 3}
   - m_RefCount: 4
@@ -11534,7 +11534,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -12447,7 +12447,8 @@ MonoBehaviour:
   ground: {fileID: 88157550}
   startingCheckpoint: {fileID: 1184097650}
   checkpointParent: {fileID: 1172480029}
-  badness: 2
+  gunAnimatorRef: {fileID: 1978075714}
+  badness: 3
 --- !u!4 &1067743334
 Transform:
   m_ObjectHideFlags: 0
