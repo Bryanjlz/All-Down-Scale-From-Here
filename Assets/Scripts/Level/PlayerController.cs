@@ -47,6 +47,12 @@ public class PlayerController : MonoBehaviour
 			uncontrolledTime -= Time.deltaTime;
 			if (uncontrolledTime <= 0) {
 				GetComponent<SpriteRenderer>().enabled = true;
+				foreach (Transform t in transform) {
+					SpriteRenderer renderer = t.GetComponent<SpriteRenderer>();
+					if (renderer != null) {
+						renderer.enabled = true;
+					}
+				}
 			}
 		}
 
@@ -93,6 +99,12 @@ public class PlayerController : MonoBehaviour
 			transform.SetPositionAndRotation(new Vector3(respawnPoint.x, respawnPoint.y, 0), Quaternion.identity);
 			uncontrolledTime = deathTimeout;
 			GetComponent<SpriteRenderer>().enabled = false;
+			foreach (Transform t in transform) {
+				SpriteRenderer renderer = t.GetComponent<SpriteRenderer>();
+				if (renderer != null) {
+					renderer.enabled = false;
+				}
+			}
 		}
 	}
 
