@@ -12,8 +12,8 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public GameObject dialogueBox;
 
-    public bool textStillAnimating;
-    public string currentSentence;
+    private bool textStillAnimating;
+    private string currentSentence;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour
         displayNextSentence();
         dialogueBox.SetActive(true);
         animator.SetBool("isOpen", true);
-        
     }
 
     public void displayNextSentence ()
