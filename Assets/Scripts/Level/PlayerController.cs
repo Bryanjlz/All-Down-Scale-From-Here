@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
 	Animator playerAnimatorRef;
 	[SerializeField]
 	Animator gunAnimatorRef;
+	[SerializeField]
+	GameObject deathParticles;
+	[SerializeField]
+	GameObject respawnParticles;
+
 	float uncontrolledTime = 0;
 	
 	bool isFacingRight = true;
@@ -46,6 +51,7 @@ public class PlayerController : MonoBehaviour
 		if (uncontrolledTime > 0) {
 			uncontrolledTime -= Time.deltaTime;
 			if (uncontrolledTime <= 0) {
+				Instantiate(respawnParticles, transformRef.position, Quaternion.identity, transform);
 				GetComponent<SpriteRenderer>().enabled = true;
 				foreach (Transform t in transform) {
 					SpriteRenderer renderer = t.GetComponent<SpriteRenderer>();
@@ -96,6 +102,7 @@ public class PlayerController : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.layer == 8) {
 			rigidbodyRef.velocity = Vector2.zero;
+			Instantiate(deathParticles, transformRef.position, Quaternion.identity);
 			transform.SetPositionAndRotation(new Vector3(respawnPoint.x, respawnPoint.y, 0), Quaternion.identity);
 			uncontrolledTime = deathTimeout;
 			GetComponent<SpriteRenderer>().enabled = false;

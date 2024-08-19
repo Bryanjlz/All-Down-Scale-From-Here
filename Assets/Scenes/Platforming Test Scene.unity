@@ -1440,7 +1440,7 @@ Transform:
   m_GameObject: {fileID: 100147006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.225486, y: 3.25, z: -10}
+  m_LocalPosition: {x: 5.222212, y: 3.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6925,6 +6925,8 @@ MonoBehaviour:
   isGrounded: 0
   playerAnimatorRef: {fileID: 809077707}
   gunAnimatorRef: {fileID: 1978075714}
+  deathParticles: {fileID: 6979852584534691992, guid: 1c17a79dd0a8c3046a80a17e561c51eb, type: 3}
+  respawnParticles: {fileID: 6979852584534691992, guid: 656e2fb0205ea5d43b078ad667b017ac, type: 3}
 --- !u!4 &809077703
 Transform:
   m_ObjectHideFlags: 0

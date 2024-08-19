@@ -26,7 +26,6 @@ public class SineFlyingEnemy : MonoBehaviour
     void Update()
     {
 		internalTimer += Time.deltaTime;
-
 		transform.position = basePoint + sineAxis * Mathf.Sin(offset + 2 * Mathf.PI * internalTimer / period) * magnitude;
     }
 }
