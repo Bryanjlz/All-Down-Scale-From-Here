@@ -605,6 +605,9 @@ MonoBehaviour:
   additiveSceneChanger: {fileID: 1515019275}
   loadingBackground: {fileID: 778912386}
   loadingBar: {fileID: 1398177092}
+  loadingInterval: 0.02
+  colorInterval: 0.2
+  loadingText: {fileID: 956006103}
 --- !u!114 &1515019275
 MonoBehaviour:
   m_ObjectHideFlags: 0

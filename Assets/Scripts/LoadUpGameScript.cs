@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +17,16 @@ public class LoadUpGameScript : MonoBehaviour
     public float colorInterval = 0.2f;
     private float colorTimer = 0.0f;
 
+    private bool playedSound;
+    public TMP_Text loadingText;
+
     // Start is called before the first frame update
     void Start()
     {
+        playedSound = false;
+        loadingText.SetText("Loading...");
         desktop = GameObject.FindGameObjectWithTag("Desktop");
-        StartCoroutine(DelayAction(1.25f));
+        StartCoroutine(DelayAction(2f));
     }
 
     private void Update()
@@ -46,6 +52,11 @@ public class LoadUpGameScript : MonoBehaviour
         {
             loadingTimer = loadingTimer - loadingInterval;
             loadingBar.offsetMax = new Vector2(loadingBar.offsetMax.x + 4, loadingBar.offsetMax.y);
+        } else if (loadingTimer > loadingInterval && playedSound == false)
+        {
+            loadingText.SetText("Done!");
+            FindObjectOfType<AudioManager>().Play("loadingDone");
+            playedSound = true;
         }
     }
 

@@ -4,6 +4,7 @@ public class TaskbarFileLogic : MonoBehaviour
 {
     public bool hovered = false;
     public SpriteRenderer mySpriteRenderer;
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class TaskbarFileLogic : MonoBehaviour
 
     void OnMouseDown()
     {
+        audioManager.Play("click");
         Debug.Log("Selected");
     }
 

@@ -14,6 +14,8 @@ public class OpenFileForGame : MonoBehaviour
     [SerializeField]
     AdditiveSceneChanger additiveSceneChanger;
 
+    public AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class OpenFileForGame : MonoBehaviour
 
     void OnMouseDown()
     {
+        audioManager.Play("click");
         if (doubleClickTimer > 0)
         {
             Debug.Log("Open the file");

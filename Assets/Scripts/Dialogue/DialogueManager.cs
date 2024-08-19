@@ -15,6 +15,12 @@ public class DialogueManager : MonoBehaviour
     private bool textStillAnimating;
     private string currentSentence;
 
+    public AudioManager audioManager;
+
+    public Image canvasBackground;
+
+    public GameObject desktop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +40,20 @@ public class DialogueManager : MonoBehaviour
 
         displayNextSentence();
         dialogueBox.SetActive(true);
+        canvasBackground.color = new Color(0.4f, 0.4f, 0.4f);
+
+        // deal with colliders on desktop
+        foreach (var c in desktop.GetComponentsInChildren<BoxCollider2D>())
+        {
+            c.enabled = false;
+        }
+
         animator.SetBool("isOpen", true);
     }
 
     public void displayNextSentence ()
     {
+        audioManager.Play("click");
         StopAllCoroutines();
         if (textStillAnimating)
         {
@@ -65,8 +80,9 @@ public class DialogueManager : MonoBehaviour
         dialogueText.SetText("");
         foreach(char letter in sentence.ToCharArray())
         {
+            audioManager.Play("clickdeep");
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.025f);
         }
         textStillAnimating = false;
     }
@@ -76,6 +92,14 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Ending Conversation");
         dialogueText.SetText("");
         animator.SetBool("isOpen", false);
+        canvasBackground.color = new Color(1, 1, 1);
+
+        // reenable colliders on desktop
+        foreach (var c in desktop.GetComponentsInChildren<BoxCollider2D>())
+        {
+            c.enabled = true;
+        }
+
         dialogueBox.SetActive(false);
     }
 }

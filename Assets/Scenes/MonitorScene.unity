@@ -327,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   mySpriteRenderer: {fileID: 116599921}
+  audioManager: {fileID: 1091614490}
 --- !u!61 &116599920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -473,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   mySpriteRenderer: {fileID: 215730418}
+  audioManager: {fileID: 1091614490}
 --- !u!61 &215730417
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -619,6 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   mySpriteRenderer: {fileID: 289528463}
+  audioManager: {fileID: 1091614490}
 --- !u!61 &289528462
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1190,7 +1193,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.71637154, y: -0.42247486}
+  m_Offset: {x: -0.81267977, y: -1.0123734}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1201,7 +1204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.862267, y: 9.265816}
+  m_Size: {x: 15.117423, y: 7.3155355}
   m_EdgeRadius: 0
 --- !u!114 &447593730
 MonoBehaviour:
@@ -1535,6 +1538,7 @@ MonoBehaviour:
   hovered: 0
   myBoxCollider: {fileID: 678887753}
   additiveSceneChanger: {fileID: 678887751}
+  audioManager: {fileID: 1091614490}
 --- !u!61 &678887753
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2005,6 +2009,9 @@ MonoBehaviour:
   dialogueText: {fileID: 860624938}
   animator: {fileID: 89361253}
   dialogueBox: {fileID: 89361248}
+  audioManager: {fileID: 1091614490}
+  canvasBackground: {fileID: 1330604629}
+  desktop: {fileID: 1090413761}
 --- !u!4 &974190458
 Transform:
   m_ObjectHideFlags: 0
@@ -2100,13 +2107,25 @@ MonoBehaviour:
   sounds:
   - name: click
     clip: {fileID: 8300000, guid: f2e86954213b1ab4dbc105178514d334, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: boop
-    clip: {fileID: 8300000, guid: 818f8b8eb658d7c4b92da0c1df762b7e, type: 3}
-    volume: 1
+  - name: clickdeep
+    clip: {fileID: 8300000, guid: f2e86954213b1ab4dbc105178514d334, type: 3}
+    volume: 0.3
+    pitch: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: loadingDone
+    clip: {fileID: 8300000, guid: 0ad8b44851d15d741a95c594717f8698, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bgm
+    clip: {fileID: 0}
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -2159,6 +2178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   mySpriteRenderer: {fileID: 1139395686}
+  audioManager: {fileID: 1091614490}
 --- !u!61 &1139395685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2713,6 +2733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   mySpriteRenderer: {fileID: 1354031807}
+  audioManager: {fileID: 1091614490}
 --- !u!61 &1354031806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4125,6 +4146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   mySpriteRenderer: {fileID: 2122462473}
+  audioManager: {fileID: 1091614490}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
