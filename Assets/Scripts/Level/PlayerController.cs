@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.layer == 8) {
 			rigidbodyRef.velocity = Vector2.zero;
+			StartCoroutine(delayedPositionUpdate());
 			Instantiate(deathParticles, transformRef.position, Quaternion.identity);
-			transform.SetPositionAndRotation(new Vector3(respawnPoint.x, respawnPoint.y, 0), Quaternion.identity);
 			uncontrolledTime = deathTimeout;
 			GetComponent<SpriteRenderer>().enabled = false;
 			foreach (Transform t in transform) {
@@ -140,5 +140,10 @@ public class PlayerController : MonoBehaviour
 		Vector3 scale = transformRef.localScale;
 		scale.x *= -1;
 		transformRef.localScale = scale;
+	}
+
+	IEnumerator delayedPositionUpdate() {
+		yield return new WaitForSeconds(deathTimeout / 2);
+		transform.SetPositionAndRotation(new Vector3(respawnPoint.x, respawnPoint.y, 0), Quaternion.identity);
 	}
 }
