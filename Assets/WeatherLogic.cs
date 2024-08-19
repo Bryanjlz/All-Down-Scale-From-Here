@@ -10,7 +10,6 @@ public class WeatherLogic : MonoBehaviour
 
     public void updateWeatherSprite(int currentWeather)
     {
-        Debug.Log(sprites);
         weatherRenderer.sprite = sprites[currentWeather % 7];
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class OpenFileForGame : MonoBehaviour
@@ -8,7 +9,7 @@ public class OpenFileForGame : MonoBehaviour
     public bool hovered = false;
     private float doubleClickTimer = 0;
 
-    public GameObject shouldShowDesktop;
+    public BoxCollider2D myBoxCollider;
 
     [SerializeField]
     AdditiveSceneChanger additiveSceneChanger;
@@ -16,7 +17,7 @@ public class OpenFileForGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        myBoxCollider.enabled = true;
     }
 
     private void Update()
@@ -44,7 +45,11 @@ public class OpenFileForGame : MonoBehaviour
         {
             Debug.Log("Open the file");
             additiveSceneChanger.LoadScene();
-            shouldShowDesktop.SetActive(false);
+
+            // prevent opening too many games at once
+            myBoxCollider.enabled = false;
+            StartCoroutine(DelayAction(2));
+
             selected = false;
         } else
         {
@@ -67,5 +72,11 @@ public class OpenFileForGame : MonoBehaviour
     private void OnMouseDrag()
     {
         Debug.Log("Dragging!");
+    }
+
+    IEnumerator DelayAction(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        myBoxCollider.enabled = true;
     }
 }
