@@ -13,7 +13,7 @@ public class FlyingEnemy : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update() {
+	void FixedUpdate() {
 		didReflect = false;
 		transform.position += velocity * Time.deltaTime;
 	}
