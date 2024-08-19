@@ -12448,7 +12448,8 @@ MonoBehaviour:
   startingCheckpoint: {fileID: 1184097650}
   checkpointParent: {fileID: 1172480029}
   gunAnimatorRef: {fileID: 1978075714}
-  badness: 3
+  playerAnimatorRef: {fileID: 809077707}
+  badness: 4
 --- !u!4 &1067743334
 Transform:
   m_ObjectHideFlags: 0
