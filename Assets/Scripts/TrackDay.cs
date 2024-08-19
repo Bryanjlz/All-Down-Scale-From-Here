@@ -8,6 +8,7 @@ public class TrackDay : MonoBehaviour
     public GameObject dateTextObject;
     public GameObject noteTextObject;
     public GameObject weatherDisplayObject;
+    public DialogueTrigger[] dayScripts;
 
     public void nextDay ()
     {
@@ -15,5 +16,8 @@ public class TrackDay : MonoBehaviour
         dateTextObject.GetComponent<DateTextDisplay>().updateDateText(currentDay);
         noteTextObject.GetComponent<NoteTextDIsplay>().updateNoteText(currentDay);
         weatherDisplayObject.GetComponent<WeatherLogic>().updateWeatherSprite(currentDay);
+        if (dayScripts[currentDay % 7] != null) {
+            dayScripts[currentDay % 7].triggerDialogue();
+        }
     }
 }
