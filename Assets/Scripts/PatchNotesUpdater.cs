@@ -24,7 +24,7 @@ public class PatchNotesUpdater : MonoBehaviour {
     [SerializeField]
     TMP_Text version;
     [SerializeField] 
-    RectTransform transform;
+    RectTransform rectTransform;
     
     [SerializeField]
     private int day;
@@ -37,7 +37,7 @@ public class PatchNotesUpdater : MonoBehaviour {
         version.text = "1." + day + " PATCH NOTES";
         if (day == 4) {
             patchNotes.fontSize = 10;
-            transform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 300);
+            rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 300);
         }
     }
 }
