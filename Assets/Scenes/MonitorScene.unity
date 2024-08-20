@@ -2247,6 +2247,48 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: jump1
+    clip: {fileID: 8300000, guid: efbeaf586928c39449baff37fea10de1, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: jump2
+    clip: {fileID: 8300000, guid: efbeaf586928c39449baff37fea10de1, type: 3}
+    volume: 0.7
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+  - name: shoot1
+    clip: {fileID: 8300000, guid: fcba3ae94bb9af3499f9593d2ff84203, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: shoot2
+    clip: {fileID: 8300000, guid: fcba3ae94bb9af3499f9593d2ff84203, type: 3}
+    volume: 0.25
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+  - name: whip
+    clip: {fileID: 8300000, guid: 0b506d0109c9bdc4a90c0e1a6ded6778, type: 3}
+    volume: 0.6
+    pitch: 1.25
+    loop: 0
+    source: {fileID: 0}
+  - name: death
+    clip: {fileID: 8300000, guid: 92c287a411a1ca446b8397bedfcd5c8a, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: deathEnemy
+    clip: {fileID: 8300000, guid: 92c287a411a1ca446b8397bedfcd5c8a, type: 3}
+    volume: 0.2
+    pitch: 1.35
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1133453539
 GameObject:
   m_ObjectHideFlags: 0

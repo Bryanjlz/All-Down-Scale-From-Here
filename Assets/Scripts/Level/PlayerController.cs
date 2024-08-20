@@ -31,10 +31,13 @@ public class PlayerController : MonoBehaviour
 	
 	bool isFacingRight = true;
 
+	private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
-		transformRef = transform;
+		audioManager = FindObjectOfType<AudioManager>();
+        transformRef = transform;
 		colliderRef = GetComponent<Collider2D>();
 		rigidbodyRef = GetComponent<Rigidbody2D>();
 		if (respawnPoint == null) {
@@ -82,7 +85,17 @@ public class PlayerController : MonoBehaviour
 			}
 
 			if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
-				rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, jumpStrength);
+                if (UnityEngine.Random.value < .5)
+                {
+					Debug.Log("jump1");
+                    audioManager.Play("jump1");
+                }
+                else
+				{
+                    Debug.Log("jump2");
+                    audioManager.Play("jump2");
+                }
+                rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, jumpStrength);
 			} else if (Input.GetKeyUp(KeyCode.UpArrow) && rigidbodyRef.velocity.y > shortHopSpeed) {
 				rigidbodyRef.velocity = new Vector2(rigidbodyRef.velocity.x, shortHopSpeed);
 			}
@@ -99,9 +112,11 @@ public class PlayerController : MonoBehaviour
 		}
     }
 
+	// Player Death
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.layer == 8) {
-			rigidbodyRef.velocity = Vector2.zero;
+            audioManager.Play("death");
+            rigidbodyRef.velocity = Vector2.zero;
 			StartCoroutine(delayedPositionUpdate());
 			Instantiate(deathParticles, transformRef.position, Quaternion.identity);
 			uncontrolledTime = deathTimeout;

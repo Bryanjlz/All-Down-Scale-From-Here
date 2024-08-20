@@ -18,11 +18,14 @@ public class GunController : MonoBehaviour
 	
 	[SerializeField]
 	Animator animatorRef;
-	
-	// Start is called before the first frame update
+
+    private AudioManager audioManager;
+
+    // Start is called before the first frame update
     void Start()
     {
-		player = GetComponent<PlayerController>();
+        audioManager = FindObjectOfType<AudioManager>();
+        player = GetComponent<PlayerController>();
 		if (player == null) {
 			Debug.LogError("Gun should be instantiated on the same object as the player character!");
 		}
@@ -38,15 +41,24 @@ public class GunController : MonoBehaviour
 			internalCooldown = cooldown;
 			Vector3 position = transform.position;
 			if (isShootingAllowed) {
-				animatorRef.SetTrigger("shoot");
+                if (UnityEngine.Random.value < .5)
+                {
+                    audioManager.Play("shoot1");
+                }
+                else
+                {
+                    audioManager.Play("shoot2");
+                }
+                animatorRef.SetTrigger("shoot");
 				position.y -= 0.15f;
 				position.x += 0.5f * player.GetFacingDirection();
 				GameObject go = Instantiate(bulletPrefab.gameObject, position, Quaternion.identity);
 				Bullet bullet = go.GetComponent<Bullet>();
 				bullet.SetVelocity(new Vector3(bulletSpeed * player.GetFacingDirection(), 0, 0));
 			} else {
-				// Pistol whip
-				animatorRef.SetTrigger("whip");
+                // Pistol whip
+                audioManager.Play("whip");
+                animatorRef.SetTrigger("whip");
 				position.y -= 0.15f;
 				position.x += .7f * player.GetFacingDirection();
 				// Keep pistol whip attached to player
