@@ -26,7 +26,13 @@ public class EndLevel : MonoBehaviour {
 
 	private void Start() {
 		fadeAnimator = GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>();
+		if (fadeAnimator == null) {
+			print("fade animator");
+		}
 		dayTracker = GameObject.FindGameObjectWithTag("DayManager").GetComponent<TrackDay>();
+		if (dayTracker == null) {
+			print("day tracker");
+		}
 	}
 
 	private void Update() {
@@ -49,6 +55,9 @@ public class EndLevel : MonoBehaviour {
 		}
 
 		if (isFading && Time.time - timeStartFade > totalFadeTime) {
+			if (sceneChanger == null) {
+				print("scene changer");
+			}
 			sceneChanger.UnloadScene("Win");
 			sceneChanger.UnloadScene("Platforming Test Scene");
 			dialogueTriggers[dayTracker.currentDay].manager.desktop.SetActive(true);
