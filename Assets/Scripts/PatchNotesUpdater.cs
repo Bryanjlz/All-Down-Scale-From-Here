@@ -15,7 +15,8 @@ public class PatchNotesUpdater : MonoBehaviour {
         "To avoid another lawsuit, all graphics will be moved to a new DLC to pay them. \n",
         "Due to complaints about performance issues, we have downgraded all your Operating Systems to to bindows XP.",
         "It has caught our attention that our game is too easy, so all checkpoints have been " +
-        "moved to DLC."
+        "moved to DLC.",
+		"Your free trial has ended. Please check the DLC store.",
     };
 
     [SerializeField]

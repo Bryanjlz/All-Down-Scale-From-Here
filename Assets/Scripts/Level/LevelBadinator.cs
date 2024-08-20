@@ -81,6 +81,7 @@ public class LevelBadinator : MonoBehaviour
 		}
 		if (badness >= LevelBadness.NO_GAME) {
 			Instantiate(gameOverPrefab);
+			FindObjectOfType<AudioManager>().Play("loadingDone");
 			Destroy(player);
 		}
 	}
