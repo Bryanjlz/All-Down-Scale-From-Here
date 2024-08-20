@@ -11,6 +11,8 @@ public class TaskbarFileLogic : MonoBehaviour
     public GameObject objectToRender;
     public GameObject textToRender;
 
+    public bool isGlowing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,26 @@ public class TaskbarFileLogic : MonoBehaviour
 
     private void Update()
     {
-        if (hovered)
+        if (isGlowing)
         {
-            mySpriteRenderer.color = new Color(1f, 1f, 1f, 0.1f);
+            if (hovered)
+            {
+                mySpriteRenderer.color = new Color(1f, 0.5f, 0, 0.4f);
+            }
+            else
+            {
+                mySpriteRenderer.color = new Color(1f, 0.5f, 0, 0.25f);
+            }
         } else
         {
-            mySpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+            if (hovered)
+            {
+                mySpriteRenderer.color = new Color(1f, 1f, 1f, 0.1f);
+            }
+            else
+            {
+                mySpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+            }
         }
     }
 
