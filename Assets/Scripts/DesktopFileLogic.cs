@@ -36,10 +36,10 @@ public class OpenFileForGame : MonoBehaviour
 
         if (hovered)
         {
-            mySpriteRenderer.color = new Color(1f, 1f, 1f, 0.04f);
+            mySpriteRenderer.color = new Color(1f, 1f, 1f, 0.08f);
         } else if (selected)
         {
-            mySpriteRenderer.color = new Color(1f, 1f, 1f, 0.08f);
+            mySpriteRenderer.color = new Color(1f, 1f, 1f, 0.16f);
         } else
         {
             mySpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
