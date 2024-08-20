@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class SineFlyingEnemy : MonoBehaviour
 {
@@ -15,9 +16,11 @@ public class SineFlyingEnemy : MonoBehaviour
 	public GameObject deathParticles;
 
 	private float internalTimer = 0f;
+    public bool badMovement = false;
+    public float counter = 0;
 
-	// Start is called before the first frame update
-	void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         if (basePoint == null || useStartingPosition) {
 			basePoint = transform.position;
@@ -27,8 +30,21 @@ public class SineFlyingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		internalTimer += Time.deltaTime;
-		transform.position = basePoint + sineAxis * Mathf.Sin(offset + 2 * Mathf.PI * internalTimer / period) * magnitude;
+        if (badMovement)
+        {
+            counter += Time.deltaTime;
+            internalTimer += Time.deltaTime;
+            if (counter > 0.1f)
+            {
+                transform.position = basePoint + sineAxis * Mathf.Sin(offset + 2 * Mathf.PI * internalTimer / period) * magnitude;
+                counter = 0;
+            }
+        } else
+		{
+            internalTimer += Time.deltaTime;
+            transform.position = basePoint + sineAxis * Mathf.Sin(offset + 2 * Mathf.PI * internalTimer / period) * magnitude;
+        }
+        
     }
 
 

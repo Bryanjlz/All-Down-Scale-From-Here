@@ -7,17 +7,35 @@ public class FlyingEnemy : MonoBehaviour {
 	public Vector3 velocity;
 	public SpriteRenderer spriteRenderer;
 	public GameObject deathParticles;
+	public bool badMovement = false;
 
 	// Start is called before the first frame update
 	void Start() {
 		spriteRenderer.flipX = velocity.x < 0;
 	}
 
+	public int counter = 0;
+
 	// Update is called once per frame
 	void FixedUpdate() {
-		didReflect = false;
-		transform.position += velocity * Time.deltaTime;
-	}
+		if (badMovement)
+		{
+			counter += 1;
+			int randomInt = Random.Range(1, 6);
+			if (counter >= randomInt)
+			{
+				transform.position += velocity * Time.deltaTime * (counter % 4 + 1);
+				counter = 0;
+			}
+            didReflect = false;
+        }
+		else
+		{
+            transform.position += velocity * Time.deltaTime;
+            didReflect = false;
+        }
+
+    }
 
 	void OnTriggerEnter2D(Collider2D other) {
 		int layer = other.gameObject.layer;

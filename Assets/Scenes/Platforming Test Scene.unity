@@ -67118,6 +67118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flying Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3560601070651786716, guid: e7ebe450fc8aa37479813e75b77bca2e, type: 3}
+      propertyPath: badinator
+      value: 
+      objectReference: {fileID: 1067743333}
     - target: {fileID: 8676594645379426943, guid: e7ebe450fc8aa37479813e75b77bca2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.26

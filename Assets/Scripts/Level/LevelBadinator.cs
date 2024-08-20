@@ -72,8 +72,15 @@ public class LevelBadinator : MonoBehaviour
 			background.SetActive(false);
 		}
 		if (badness >= LevelBadness.BAD_FRAMERATE) {
-			Application.targetFrameRate = 15;
-		}
+            foreach (FlyingEnemy enemy in enemiesParent.GetComponentsInChildren<FlyingEnemy>())
+            {
+				enemy.badMovement = true;
+            }
+            foreach (SineFlyingEnemy enemy in enemiesParent.GetComponentsInChildren<SineFlyingEnemy>())
+            {
+                enemy.badMovement = true;
+            }
+        }
 		if (badness >= LevelBadness.NO_CHECKPOINTS) {
 			foreach (Transform transform in checkpointParent.transform) {
 				if (transform.gameObject != startingCheckpoint && transform.gameObject != endingCheckpoint) {
