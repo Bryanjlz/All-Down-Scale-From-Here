@@ -5052,7 +5052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ALL DOWN SCALE FROM HERE
+  m_text: ALL DOWNSCALE FROM HERE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a9efa45ad1d4324987740243c9ecf64, type: 2}
   m_sharedMaterial: {fileID: 1787595250453765544, guid: 6a9efa45ad1d4324987740243c9ecf64, type: 2}
