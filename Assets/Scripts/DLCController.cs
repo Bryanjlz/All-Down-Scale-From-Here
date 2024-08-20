@@ -25,7 +25,7 @@ public class DLCController : MonoBehaviour {
                 slider.SetActive(true);
             }
             // Enable DLCs, and adjust slider content box size as necessary
-            for (int i = 0; i < day; i++) {
+            for (int i = 0; i < day && i < DLCMenuItems.Count; i++) {
                 DLCMenuItems[i].SetActive(true);
             }
             contentTransform.sizeDelta = new Vector2(contentTransform.rect.width, 30 * day);

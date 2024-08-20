@@ -12,10 +12,14 @@ public class TrackDay : MonoBehaviour
 
     public GameObject wordDisplayObject;
     public GameObject descriptionDisplayObject;
+
+    public GameObject windowsUpdateObject;
     public DialogueTrigger[] dayScripts;
 
+    [ContextMenu("nextDay")]
     public void nextDay ()
     {
+        FindObjectOfType<AudioManager>().Play("morning");
         currentDay += 1;
         dateTextObject.GetComponent<DateTextDisplay>().updateDateText(currentDay);
         noteTextObject.GetComponent<NoteTextDIsplay>().updateNoteText(currentDay);
@@ -23,8 +27,10 @@ public class TrackDay : MonoBehaviour
         birdDisplayObject.GetComponent<Birdwatch>().updateBirdSprite(currentDay);
         wordDisplayObject.GetComponent<DisplayDailyText>().updateTextDisplay(currentDay);
         descriptionDisplayObject.GetComponent<DisplayDailyText>().updateTextDisplay(currentDay);
-        if (dayScripts[currentDay % 7] != null) {
-            dayScripts[currentDay % 7].triggerDialogue();
+        windowsUpdateObject.GetComponent<WindowsUpdate>().updateUpdateButton(currentDay);
+        
+        if (dayScripts[currentDay % 8] != null) {
+            dayScripts[currentDay % 8].triggerDialogue();
         }
     }
 }

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadUpGameScript : MonoBehaviour
+public class LoadUpGameFail : MonoBehaviour
 {
     public AdditiveSceneChanger additiveSceneChanger;
     public Image loadingBackground;
@@ -20,10 +20,13 @@ public class LoadUpGameScript : MonoBehaviour
     private bool playedSound;
     public TMP_Text loadingText;
 
+    private bool stopLoading;
+
     // Start is called before the first frame update
     void Start()
     {
         playedSound = false;
+        stopLoading = false;
         loadingText.SetText("Loading...");
         desktop = GameObject.FindGameObjectWithTag("Desktop");
         StartCoroutine(DelayAction(2f));
@@ -37,26 +40,32 @@ public class LoadUpGameScript : MonoBehaviour
         if (colorTimer > colorInterval)
         {
             colorTimer = colorTimer - colorInterval;
-            if (loadingBackground.color.g < 1)
+            if (!stopLoading)
             {
-                loadingBackground.color = new Color(loadingBackground.color.r, loadingBackground.color.g + 0.2f, loadingBackground.color.b);
-            }
-            else if (loadingBackground.color.r > 0.75f)
-            {
-                loadingBackground.color = new Color(loadingBackground.color.r - 0.1f, loadingBackground.color.g, loadingBackground.color.b);
+                if (loadingBackground.color.g < 1)
+                {
+                    loadingBackground.color = new Color(loadingBackground.color.r, loadingBackground.color.g + 0.2f, loadingBackground.color.b);
+                }
+                else if (loadingBackground.color.r > 0.80f)
+                {
+                    loadingBackground.color = new Color(loadingBackground.color.r - 0.1f, loadingBackground.color.g, loadingBackground.color.b);
+                }
             }
         }
 
 
-        if (loadingTimer > loadingInterval && loadingBar.offsetMax.x < 100)
+        if (loadingTimer > loadingInterval && loadingBar.offsetMax.x < 60)
         {
             loadingTimer = loadingTimer - loadingInterval;
             loadingBar.offsetMax = new Vector2(loadingBar.offsetMax.x + 4, loadingBar.offsetMax.y);
         } else if (loadingTimer > loadingInterval && playedSound == false)
         {
-            loadingText.SetText("Done!");
-            FindObjectOfType<AudioManager>().Play("loadingDone");
-            FindObjectOfType<AudioManager>().Play("bgm");
+            stopLoading = true;
+            FindObjectOfType<AudioManager>().Play("error");
+            loadingText.SetText("Failed...<br>Downscale OS");
+            loadingBackground.color = new Color(1, 0.5f, 0.5f);
+
+            // FindObjectOfType<AudioManager>().Play("loadingDone");
             playedSound = true;
         }
     }
@@ -64,8 +73,6 @@ public class LoadUpGameScript : MonoBehaviour
     IEnumerator DelayAction(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        additiveSceneChanger.ChangeScene();
-        additiveSceneChanger.LoadScene("GoodPatchNotes");
-        desktop.SetActive(false);
+        additiveSceneChanger.UnloadScene("GameLoadingFail");
     }
 }

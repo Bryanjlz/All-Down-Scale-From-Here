@@ -15,6 +15,11 @@ public class OpenFileForGame : MonoBehaviour
     AdditiveSceneChanger additiveSceneChanger;
 
     public AudioManager audioManager;
+    public TrackDay dayManager;
+
+    public bool updated = false;
+    public GameObject windowsUpdater;
+    public GameObject updateDialog;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +52,17 @@ public class OpenFileForGame : MonoBehaviour
         if (doubleClickTimer > 0)
         {
             Debug.Log("Open the file");
-            additiveSceneChanger.LoadScene();
+            if (dayManager.currentDay == 7)
+            {
+                additiveSceneChanger.LoadScene("GameLoadingFail2");
+            } else if (dayManager.currentDay == 5 && !updated)
+            {
+                additiveSceneChanger.LoadScene("GameLoadingFail");
+            } else
+            {
+                additiveSceneChanger.LoadScene();
+            }
+            
 
             // prevent opening too many games at once
             myBoxCollider.enabled = false;
@@ -81,5 +96,10 @@ public class OpenFileForGame : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         myBoxCollider.enabled = true;
+        if (dayManager.currentDay == 5 && !updated)
+        {
+            windowsUpdater.GetComponent<TaskbarFileLogic>().isGlowing = true;
+            updateDialog.GetComponent<WindowsUpdate>().updateUpdateButton(5);
+        }
     }
 }

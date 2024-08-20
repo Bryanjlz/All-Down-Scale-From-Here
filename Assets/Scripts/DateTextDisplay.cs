@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DateTextDisplay : MonoBehaviour
 {
-    private string[] dates = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+    private string[] dates = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "mOnDAy" };
     public TMP_Text dateText;
 
     private void Start()
@@ -15,6 +15,6 @@ public class DateTextDisplay : MonoBehaviour
     }
     public void updateDateText(int currentDateIndex)
     {
-        dateText.SetText(dates[currentDateIndex % 7]);
+        dateText.SetText(dates[currentDateIndex % 8]);
     }
 }

@@ -11,6 +11,6 @@ public class Birdwatch : MonoBehaviour
     // Update is called once per frame
     public void updateBirdSprite(int currentDay)
     {
-        birdRenderer.sprite = birds[currentDay % 7];
+        birdRenderer.sprite = birds[currentDay % 8];
     }
 }

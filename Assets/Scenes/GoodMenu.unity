@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 1172466268}
   - component: {fileID: 1172466267}
   - component: {fileID: 1172466270}
+  - component: {fileID: 1172466271}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -561,6 +562,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1172466271}
+        m_TargetAssemblyTypeName: InGameClick, Assembly-CSharp
+        m_MethodName: clickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1172466268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +626,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextScene: Platforming Test Scene
   SceneToUnload: GoodMenu
+--- !u!114 &1172466271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172466265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cad1f6e25d1dd40a366b09cd23eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1487177619
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +651,7 @@ GameObject:
   - component: {fileID: 1487177622}
   - component: {fileID: 1487177621}
   - component: {fileID: 1487177624}
+  - component: {fileID: 1487177625}
   m_Layer: 5
   m_Name: DLC Shop
   m_TagString: Untagged
@@ -709,6 +735,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1487177625}
+        m_TargetAssemblyTypeName: InGameClick, Assembly-CSharp
+        m_MethodName: clickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1487177622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,6 +799,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextScene: Shop
   SceneToUnload: 
+--- !u!114 &1487177625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487177619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cad1f6e25d1dd40a366b09cd23eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1515019269
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +930,7 @@ GameObject:
   - component: {fileID: 1726283881}
   - component: {fileID: 1726283880}
   - component: {fileID: 1726283883}
+  - component: {fileID: 1726283884}
   m_Layer: 5
   m_Name: Patch Notes
   m_TagString: Untagged
@@ -963,6 +1014,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1726283884}
+        m_TargetAssemblyTypeName: InGameClick, Assembly-CSharp
+        m_MethodName: clickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1726283881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,6 +1078,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextScene: GoodPatchNotes
   SceneToUnload: 
+--- !u!114 &1726283884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726283878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cad1f6e25d1dd40a366b09cd23eb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1886011153
 GameObject:
   m_ObjectHideFlags: 0

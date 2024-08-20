@@ -13,9 +13,10 @@ public class PatchNotesUpdater : MonoBehaviour {
         "your guns like a club, breaking all of them...",
         "Our artists are on strike and demanding royalties for art usage. " +
         "To avoid another lawsuit, all graphics will be moved to a new DLC to pay them. \n",
-        "Due to complaints about performance issues, we have downgraded all your Operating Systems to to bindows XP.",
+        "Due to complaints about performance issues, we now only support the game for bindows XP.",
         "It has caught our attention that our game is too easy, so all checkpoints have been " +
-        "moved to DLC."
+        "moved to DLC.",
+		"Your free trial has ended. Please check the DLC store.",
     };
 
     [SerializeField]
