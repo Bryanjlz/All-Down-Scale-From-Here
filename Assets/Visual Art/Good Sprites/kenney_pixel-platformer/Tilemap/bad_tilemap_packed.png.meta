@@ -399,7 +399,7 @@ TextureImporter:
       name: bad_tilemap_packed_13
       rect:
         serializedVersion: 2
-        x: 5472
+        x: 1728
         y: 2016
         width: 288
         height: 288
@@ -420,8 +420,8 @@ TextureImporter:
       name: bad_tilemap_packed_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1728
+        x: 5472
+        y: 2016
         width: 288
         height: 288
       alignment: 0
@@ -441,7 +441,7 @@ TextureImporter:
       name: bad_tilemap_packed_15
       rect:
         serializedVersion: 2
-        x: 288
+        x: 0
         y: 1728
         width: 288
         height: 288
@@ -462,7 +462,7 @@ TextureImporter:
       name: bad_tilemap_packed_16
       rect:
         serializedVersion: 2
-        x: 576
+        x: 288
         y: 1728
         width: 288
         height: 288
@@ -483,7 +483,7 @@ TextureImporter:
       name: bad_tilemap_packed_17
       rect:
         serializedVersion: 2
-        x: 864
+        x: 576
         y: 1728
         width: 288
         height: 288
@@ -504,7 +504,7 @@ TextureImporter:
       name: bad_tilemap_packed_18
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 864
         y: 1728
         width: 288
         height: 288
@@ -525,7 +525,7 @@ TextureImporter:
       name: bad_tilemap_packed_19
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 1152
         y: 1728
         width: 288
         height: 288
@@ -546,7 +546,7 @@ TextureImporter:
       name: bad_tilemap_packed_20
       rect:
         serializedVersion: 2
-        x: 5472
+        x: 1440
         y: 1728
         width: 288
         height: 288
@@ -567,8 +567,8 @@ TextureImporter:
       name: bad_tilemap_packed_21
       rect:
         serializedVersion: 2
-        x: 2016
-        y: 1440
+        x: 5472
+        y: 1728
         width: 288
         height: 288
       alignment: 0
@@ -609,8 +609,8 @@ TextureImporter:
       name: bad_tilemap_packed_23
       rect:
         serializedVersion: 2
-        x: 2592
-        y: 1440
+        x: 2304
+        y: 1152
         width: 288
         height: 288
       alignment: 0
@@ -630,7 +630,7 @@ TextureImporter:
       name: bad_tilemap_packed_24
       rect:
         serializedVersion: 2
-        x: 2016
+        x: 3456
         y: 1152
         width: 288
         height: 288
@@ -651,8 +651,8 @@ TextureImporter:
       name: bad_tilemap_packed_25
       rect:
         serializedVersion: 2
-        x: 2304
-        y: 1152
+        x: 3456
+        y: 864
         width: 288
         height: 288
       alignment: 0
@@ -672,8 +672,8 @@ TextureImporter:
       name: bad_tilemap_packed_26
       rect:
         serializedVersion: 2
-        x: 2592
-        y: 1152
+        x: 3456
+        y: 576
         width: 288
         height: 288
       alignment: 0
@@ -815,27 +815,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: bad_tilemap_packed_33
-      rect:
-        serializedVersion: 2
-        x: 5472
-        y: 0
-        width: 288
-        height: 288
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 285486112151da8498d7e6677e332ddf
-      internalID: 1096269194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -874,7 +853,6 @@ TextureImporter:
       bad_tilemap_packed_30: -1836310525
       bad_tilemap_packed_31: -86941411
       bad_tilemap_packed_32: -1873970688
-      bad_tilemap_packed_33: 1096269194
       bad_tilemap_packed_4: -1962718738
       bad_tilemap_packed_5: 1010206904
       bad_tilemap_packed_6: -702027000
