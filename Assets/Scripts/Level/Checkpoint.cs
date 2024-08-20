@@ -25,7 +25,9 @@ public class Checkpoint : MonoBehaviour
 			if (!player.respawnPoint.Equals(transform.position)) {
 				if (GetComponent<SpriteRenderer>()?.enabled == true) {
 					FindObjectOfType<AudioManager>().Play("flagCollect");
-					Instantiate(flagParticles, transform);
+					if (flagParticles != null) {
+						Instantiate(flagParticles, transform);
+					}
 					GetComponent<Animator>().SetTrigger("collect");
 				}
 				player.UpdateRespawnPoint(transform.position);

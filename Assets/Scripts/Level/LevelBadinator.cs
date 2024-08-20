@@ -21,6 +21,8 @@ public class LevelBadinator : MonoBehaviour
 	public GameObject ground;
 	// ...avoid destroying the starting checkpoint
 	public GameObject startingCheckpoint;
+	// ...and the ending one, which is visual
+	public GameObject endingCheckpoint;
 	public GameObject checkpointParent;
 	public GameObject gameOverPrefab;
 
@@ -72,7 +74,7 @@ public class LevelBadinator : MonoBehaviour
 		}
 		if (badness >= LevelBadness.NO_CHECKPOINTS) {
 			foreach (Transform transform in checkpointParent.transform) {
-				if (transform.gameObject != startingCheckpoint) {
+				if (transform.gameObject != startingCheckpoint && transform.gameObject != endingCheckpoint) {
 					Destroy(transform.gameObject);
 				}
 			}
