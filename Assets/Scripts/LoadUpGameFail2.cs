@@ -65,8 +65,6 @@ public class LoadUpGameFail2 : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("error");
             loadingText.SetText("ERRORERRORERRORERROR");
             loadingBackground.color = new Color(1, 0.5f, 0.5f);
-
-            // FindObjectOfType<AudioManager>().Play("loadingDone");
             playedSound = true;
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class TrackDay : MonoBehaviour
@@ -16,6 +17,10 @@ public class TrackDay : MonoBehaviour
     public GameObject windowsUpdateObject;
     public DialogueTrigger[] dayScripts;
 
+    public AudioManager audioManager;
+
+    public GameObject monitor;
+
     [ContextMenu("nextDay")]
     public void nextDay ()
     {
@@ -29,6 +34,16 @@ public class TrackDay : MonoBehaviour
         descriptionDisplayObject.GetComponent<DisplayDailyText>().updateTextDisplay(currentDay);
         windowsUpdateObject.GetComponent<WindowsUpdate>().updateUpdateButton(currentDay);
         
+        if (currentDay >= 4)
+        {
+            audioManager.DownPitch("bgm", 0.04f);
+        }
+
+        if (currentDay == 7)
+        {
+            monitor.GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0.5f);
+        }
+
         if (dayScripts[currentDay % 8] != null) {
             dayScripts[currentDay % 8].triggerDialogue();
         }

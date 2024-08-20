@@ -56,6 +56,17 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
+    public void DownPitch(string name, float amount)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            return;
+        }
+        Debug.Log("Playing sound: " + name);
+        s.source.pitch -= amount;
+    }
+
     // Update is called once per frame
     void Update()
     {

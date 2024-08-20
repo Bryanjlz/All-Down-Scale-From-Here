@@ -4060,6 +4060,8 @@ MonoBehaviour:
   - {fileID: 1542644935}
   - {fileID: 1542644933}
   - {fileID: 1542644934}
+  audioManager: {fileID: 1091614490}
+  monitor: {fileID: 368515771}
 --- !u!114 &1542644933
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6484,6 +6484,7 @@ MonoBehaviour:
   goodTiles: {fileID: 41594964}
   badTiles: {fileID: 1952537457}
   background: {fileID: 2041643748}
+  animator: {fileID: 1978263138}
 --- !u!4 &901424190
 Transform:
   m_ObjectHideFlags: 0
