@@ -22,8 +22,13 @@ public class LevelBadinator : MonoBehaviour
 	// ...avoid destroying the starting checkpoint
 	public GameObject startingCheckpoint;
 	public GameObject checkpointParent;
+	
+	// graphic downgrade refs
 	public Animator gunAnimatorRef;
 	public Animator playerAnimatorRef;
+	public GameObject goodTiles;
+	public GameObject badTiles;
+	public GameObject enemiesParent;
 
 	public int badness;
 
@@ -48,6 +53,11 @@ public class LevelBadinator : MonoBehaviour
 		if (badness >= LevelBadness.BAD_GRAPHICS) {
 			gunAnimatorRef.SetBool("isBad", true);
 			playerAnimatorRef.SetBool("isBad", true);
+			foreach (Animator enemyAnimator in enemiesParent.GetComponentsInChildren<Animator>()) {
+				enemyAnimator.SetBool("isBad", true);
+			}
+			goodTiles.SetActive(false);
+			badTiles.SetActive(true);
 		}
 		if (badness >= LevelBadness.BAD_MOVEMENT) {
 
