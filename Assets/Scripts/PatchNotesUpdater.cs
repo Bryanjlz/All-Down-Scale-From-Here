@@ -12,9 +12,8 @@ public class PatchNotesUpdater : MonoBehaviour {
         "Guns are being moved to DLC, as many of you have decided to use " +
         "your guns like a club, breaking all of them...",
         "Our artists are on strike and demanding royalties for art usage. " +
-        "To avoid another lawsuit, all graphics will be moved to a new DLC to pay them. \n\n" +
-        "Due to complaints about performance issues, we have downgraded all your Operating Systems to to windows XP.",
-        "???",
+        "To avoid another lawsuit, all graphics will be moved to a new DLC to pay them. \n",
+        "Due to complaints about performance issues, we have downgraded all your Operating Systems to to bindows XP.",
         "It has caught our attention that our game is too easy, so all checkpoints have been " +
         "moved to DLC."
     };
