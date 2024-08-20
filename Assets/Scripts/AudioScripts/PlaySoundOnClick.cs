@@ -8,7 +8,6 @@ public class PlaySoundOnClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Supposed to be audio");
         audioManager.Play("click");
     }
 }

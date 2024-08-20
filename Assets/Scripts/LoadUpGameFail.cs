@@ -61,6 +61,7 @@ public class LoadUpGameFail : MonoBehaviour
         } else if (loadingTimer > loadingInterval && playedSound == false)
         {
             stopLoading = true;
+            FindObjectOfType<AudioManager>().Play("error");
             loadingText.SetText("Failed...<br>Downscale OS");
             loadingBackground.color = new Color(1, 0.5f, 0.5f);
 

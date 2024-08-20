@@ -19,6 +19,7 @@ public class TrackDay : MonoBehaviour
     [ContextMenu("nextDay")]
     public void nextDay ()
     {
+        FindObjectOfType<AudioManager>().Play("morning");
         currentDay += 1;
         dateTextObject.GetComponent<DateTextDisplay>().updateDateText(currentDay);
         noteTextObject.GetComponent<NoteTextDIsplay>().updateNoteText(currentDay);

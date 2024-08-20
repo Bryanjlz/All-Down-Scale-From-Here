@@ -47,6 +47,7 @@ public class WindowsUpdate : MonoBehaviour
             monitorBackground.GetComponent<SpriteRenderer>().sprite = blass;
             monitorBackground.GetComponent<Transform>().localScale = new Vector3(1.7f, 0.76f, 0.06f);
             windowsUpdater.GetComponent<TaskbarFileLogic>().isGlowing = false;
+            audioManager.Play("upgrade");
             fadeAnimator.SetTrigger("FadeIn");
             isFading = false;
         }

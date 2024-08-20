@@ -52,7 +52,7 @@ public class EndLevel : MonoBehaviour {
 			sceneChanger.UnloadScene("Win");
 			sceneChanger.UnloadScene("Platforming Test Scene");
 			dialogueTriggers[dayTracker.currentDay].manager.desktop.SetActive(true);
-			dayTracker.nextDay();
+            dayTracker.nextDay();
 			fadeAnimator.SetTrigger("FadeIn");
 			isFading = false;
 		}
