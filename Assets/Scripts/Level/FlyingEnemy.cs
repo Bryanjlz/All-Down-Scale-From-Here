@@ -29,8 +29,9 @@ public class FlyingEnemy : MonoBehaviour {
 			spriteRenderer.flipX = velocity.x < 0;
 		} else if (layer == 9) {
 			// Bullet collision
-			Destroy(this.gameObject);
+			FindObjectOfType<AudioManager>().Play("deathEnemy");
 			Instantiate(deathParticles, transform.position, Quaternion.identity);
+			Destroy(this.gameObject);
 		}
 	}
 }
