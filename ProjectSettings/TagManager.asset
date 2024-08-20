@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DayManager
   - Desktop
+  - Fade
   layers:
   - Default
   - TransparentFX

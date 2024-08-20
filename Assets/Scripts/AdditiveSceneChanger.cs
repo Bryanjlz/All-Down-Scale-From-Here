@@ -13,9 +13,15 @@ public class AdditiveSceneChanger : MonoBehaviour
     public void LoadScene () {
         SceneManager.LoadSceneAsync(NextScene, LoadSceneMode.Additive);
     }
+    public void LoadScene (string scene) {
+        SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
+    }
 
     public void UnloadScene () {
         SceneManager.UnloadSceneAsync(SceneToUnload);
+    }
+    public void UnloadScene (string scene) {
+        SceneManager.UnloadSceneAsync(scene);
     }
 
     public void ChangeScene () {
