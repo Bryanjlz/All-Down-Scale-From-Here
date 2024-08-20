@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 		rigidbodyRef.velocity = new Vector2(0, rigidbodyRef.velocity.y);
 
 		if (uncontrolledTime <= 0) {
-			if (Input.GetKey(KeyCode.LeftArrow)) {
+			if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
 				rigidbodyRef.velocity = new Vector2(-moveSpeed, rigidbodyRef.velocity.y);
 				if (isFacingRight) {
 					FlipDirection();
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 				isFacingRight = false;
 			}
 
-			if (Input.GetKey(KeyCode.RightArrow)) {
+			if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
 				rigidbodyRef.velocity = new Vector2(moveSpeed, rigidbodyRef.velocity.y);
 				if (!isFacingRight) {
 					FlipDirection();
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 				isFacingRight = true;
 			}
 
-			if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
+			if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && isGrounded) {
                 if (UnityEngine.Random.value < .5)
                 {
 					Debug.Log("jump1");
