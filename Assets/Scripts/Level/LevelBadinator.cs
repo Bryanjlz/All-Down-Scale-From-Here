@@ -22,13 +22,15 @@ public class LevelBadinator : MonoBehaviour
 	// ...avoid destroying the starting checkpoint
 	public GameObject startingCheckpoint;
 	public GameObject checkpointParent;
-	
+	public GameObject gameOverPrefab;
+
 	// graphic downgrade refs
 	public Animator gunAnimatorRef;
 	public Animator playerAnimatorRef;
 	public GameObject goodTiles;
 	public GameObject badTiles;
 	public GameObject enemiesParent;
+	public GameObject background;
 
 	public int badness;
 
@@ -63,6 +65,7 @@ public class LevelBadinator : MonoBehaviour
 					flagAnimator.SetBool("isBad", true);
 				}
 			}
+			background.SetActive(false);
 		}
 		if (badness >= LevelBadness.BAD_FRAMERATE) {
 			Application.targetFrameRate = 15;
@@ -75,7 +78,8 @@ public class LevelBadinator : MonoBehaviour
 			}
 		}
 		if (badness >= LevelBadness.NO_GAME) {
-
+			Instantiate(gameOverPrefab);
+			Destroy(player);
 		}
 	}
 }

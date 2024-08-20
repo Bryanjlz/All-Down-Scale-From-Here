@@ -1441,7 +1441,7 @@ Transform:
   m_GameObject: {fileID: 100147006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.103842, y: 2.75, z: -10}
+  m_LocalPosition: {x: 6.111106, y: 2.75, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2123,16 +2123,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170226898}
-  - component: {fileID: 170226896}
-  - component: {fileID: 170226901}
   - component: {fileID: 170226897}
-  - component: {fileID: 170226900}
-  - component: {fileID: 170226899}
-  - component: {fileID: 170226906}
-  - component: {fileID: 170226905}
-  - component: {fileID: 170226904}
-  - component: {fileID: 170226903}
-  - component: {fileID: 170226902}
+  - component: {fileID: 170226896}
   m_Layer: 0
   m_Name: End of Level
   m_TagString: Untagged
@@ -2197,15 +2189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b83e6c23b1626943be53724f1f4ad30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneChanger: {fileID: 170226901}
-  dialogueTriggers:
-  - {fileID: 170226900}
-  - {fileID: 170226899}
-  - {fileID: 170226906}
-  - {fileID: 170226905}
-  - {fileID: 170226904}
-  - {fileID: 170226903}
-  - {fileID: 170226902}
+  sceneChanger: {fileID: 0}
+  dialogueTriggers: []
 --- !u!4 &170226898
 Transform:
   m_ObjectHideFlags: 0
@@ -2221,134 +2206,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &170226899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - Hmm, weird that we can't use bullets anymore...
-    - but at least the melee attack is pretty cool!
-  manager: {fileID: 0}
---- !u!114 &170226900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - Well that was pretty fun! A little easy though.
-    - Looking forward to tomorrow's patch!
-  manager: {fileID: 0}
---- !u!114 &170226901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c574f75be9fdc442bf9c81fdafd812e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextScene: Win
-  SceneToUnload: 
---- !u!114 &170226902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - 0-0
-  manager: {fileID: 0}
---- !u!114 &170226903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - 'How did they even manage to downgrade my OS... '
-  manager: {fileID: 0}
---- !u!114 &170226904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - ...I didn't need good graphics anyways.
-  manager: {fileID: 0}
---- !u!114 &170226905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - Even the combat is getting paywalled??
-  manager: {fileID: 0}
---- !u!114 &170226906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170226895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - Seems like they patched out the shortcut below...
-  manager: {fileID: 0}
 --- !u!1 &178523802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,13 +3677,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322059699}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2104782035}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 435155978}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &325943587
 GameObject:
@@ -4567,7 +4424,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 322059701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453261821
@@ -14816,11 +14674,13 @@ MonoBehaviour:
   ground: {fileID: 88157550}
   startingCheckpoint: {fileID: 1184097650}
   checkpointParent: {fileID: 1172480029}
+  gameOverPrefab: {fileID: 3776744487112033616, guid: bef50d58cff0c934e9a55d728eaf90da, type: 3}
   gunAnimatorRef: {fileID: 1978075714}
   playerAnimatorRef: {fileID: 809077707}
   goodTiles: {fileID: 752945085}
   badTiles: {fileID: 1276823447}
   enemiesParent: {fileID: 1264506657}
+  background: {fileID: 435155977}
   badness: 3
 --- !u!4 &1067743334
 Transform:
@@ -67029,4 +66889,3 @@ SceneRoots:
   - {fileID: 786919006}
   - {fileID: 170226898}
   - {fileID: 435155978}
-  - {fileID: 322059701}
