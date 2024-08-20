@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 8, y: 0, z: 0}
   spriteRenderer: {fileID: 2373147371744132294}
+  deathParticles: {fileID: 6979852584534691992, guid: 56b08744ee99de44dbc736dd1b21ebad, type: 3}
 --- !u!212 &2373147371744132294
 SpriteRenderer:
   m_ObjectHideFlags: 0

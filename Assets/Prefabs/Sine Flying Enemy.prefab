@@ -54,6 +54,7 @@ MonoBehaviour:
   sineAxis: {x: 0, y: 1, z: 0}
   basePoint: {x: 0, y: 0, z: 0}
   useStartingPosition: 1
+  deathParticles: {fileID: 6979852584534691992, guid: 40599a0014c3af4458f448ce0bce8d2a, type: 3}
 --- !u!212 &5522139144120226815
 SpriteRenderer:
   m_ObjectHideFlags: 0

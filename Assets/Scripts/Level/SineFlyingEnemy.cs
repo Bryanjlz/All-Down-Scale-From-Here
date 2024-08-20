@@ -12,11 +12,12 @@ public class SineFlyingEnemy : MonoBehaviour
 	public Vector3 sineAxis;
 	public Vector3 basePoint;
 	public bool useStartingPosition;
+	public GameObject deathParticles;
 
 	private float internalTimer = 0f;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
         if (basePoint == null || useStartingPosition) {
 			basePoint = transform.position;
@@ -36,6 +37,7 @@ public class SineFlyingEnemy : MonoBehaviour
 		if (layer == 9) {
 			// Bullet collision
 			Destroy(this.gameObject);
+			Instantiate(deathParticles, transform.position, Quaternion.identity);
 		}
 	}
 }

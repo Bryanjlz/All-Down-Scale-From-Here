@@ -6,6 +6,7 @@ public class FlyingEnemy : MonoBehaviour {
 	bool didReflect = false;
 	public Vector3 velocity;
 	public SpriteRenderer spriteRenderer;
+	public GameObject deathParticles;
 
 	// Start is called before the first frame update
 	void Start() {
@@ -29,6 +30,7 @@ public class FlyingEnemy : MonoBehaviour {
 		} else if (layer == 9) {
 			// Bullet collision
 			Destroy(this.gameObject);
+			Instantiate(deathParticles, transform.position, Quaternion.identity);
 		}
 	}
 }
