@@ -32,7 +32,6 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("bgm");
     }
 
     public void Play(string name)
@@ -44,6 +43,17 @@ public class AudioManager : MonoBehaviour
         }
         Debug.Log("Playing sound: " + name);
         s.source.Play();
+    }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            return;
+        }
+        Debug.Log("Playing sound: " + name);
+        s.source.Stop();
     }
 
     // Update is called once per frame

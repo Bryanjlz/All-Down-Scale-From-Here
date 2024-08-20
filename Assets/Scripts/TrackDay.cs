@@ -29,8 +29,8 @@ public class TrackDay : MonoBehaviour
         descriptionDisplayObject.GetComponent<DisplayDailyText>().updateTextDisplay(currentDay);
         windowsUpdateObject.GetComponent<WindowsUpdate>().updateUpdateButton(currentDay);
         
-        if (dayScripts[currentDay % 7] != null) {
-            dayScripts[currentDay % 7].triggerDialogue();
+        if (dayScripts[currentDay % 8] != null) {
+            dayScripts[currentDay % 8].triggerDialogue();
         }
     }
 }

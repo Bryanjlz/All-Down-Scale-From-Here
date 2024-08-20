@@ -36,6 +36,8 @@ public class LevelBadinator : MonoBehaviour
 
 	public int badness;
 
+    public DialogueTrigger endingDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,8 +83,16 @@ public class LevelBadinator : MonoBehaviour
 		}
 		if (badness >= LevelBadness.NO_GAME) {
 			Instantiate(gameOverPrefab);
-			FindObjectOfType<AudioManager>().Play("loadingDone");
-			Destroy(player);
+			FindObjectOfType<AudioManager>().Play("shoot1");
+            FindObjectOfType<AudioManager>().Play("error");
+            StartCoroutine(DelayAction(6));
+            Destroy(player);
 		}
-	}
+
+        IEnumerator DelayAction(float delayTime)
+        {
+            yield return new WaitForSeconds(delayTime);
+			endingDialogue.triggerDialogue();
+        }
+    }
 }

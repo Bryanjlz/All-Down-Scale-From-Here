@@ -10,6 +10,6 @@ public class WeatherLogic : MonoBehaviour
 
     public void updateWeatherSprite(int currentWeather)
     {
-        weatherRenderer.sprite = sprites[currentWeather % 7];
+        weatherRenderer.sprite = sprites[currentWeather % 8];
     }
 }

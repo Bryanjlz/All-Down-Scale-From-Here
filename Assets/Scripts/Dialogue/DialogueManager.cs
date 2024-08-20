@@ -21,10 +21,13 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject desktop;
 
+    public Dialogue introDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        startDialogue(introDialogue);
     }
 
     public void startDialogue(Dialogue dialogue)

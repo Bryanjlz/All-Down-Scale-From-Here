@@ -52,6 +52,11 @@ public class EndLevel : MonoBehaviour {
 			sceneChanger.UnloadScene("Win");
 			sceneChanger.UnloadScene("Platforming Test Scene");
 			dialogueTriggers[dayTracker.currentDay].manager.desktop.SetActive(true);
+            FindObjectOfType<AudioManager>().Stop("bgm");
+            foreach (GameObject background in GameObject.FindGameObjectsWithTag("Application"))
+			{
+				background.SetActive(false);
+            }
             dayTracker.nextDay();
 			fadeAnimator.SetTrigger("FadeIn");
 			isFading = false;

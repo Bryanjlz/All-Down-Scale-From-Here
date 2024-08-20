@@ -52,7 +52,10 @@ public class OpenFileForGame : MonoBehaviour
         if (doubleClickTimer > 0)
         {
             Debug.Log("Open the file");
-            if (dayManager.currentDay == 5 && !updated)
+            if (dayManager.currentDay == 7)
+            {
+                additiveSceneChanger.LoadScene("GameLoadingFail2");
+            } else if (dayManager.currentDay == 5 && !updated)
             {
                 additiveSceneChanger.LoadScene("GameLoadingFail");
             } else

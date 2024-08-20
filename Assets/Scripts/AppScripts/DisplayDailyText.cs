@@ -10,6 +10,6 @@ public class DisplayDailyText : MonoBehaviour
 
     public void updateTextDisplay(int currentDay)
     {
-        textDisplay.SetText(textArray[currentDay % 7]);
+        textDisplay.SetText(textArray[currentDay % 8]);
     }
 }

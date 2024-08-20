@@ -1441,7 +1441,7 @@ Transform:
   m_GameObject: {fileID: 100147006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.111106, y: 2.75, z: -10}
+  m_LocalPosition: {x: 6.1094246, y: 2.75, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14919,6 +14919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067743334}
   - component: {fileID: 1067743333}
+  - component: {fileID: 1067743335}
   m_Layer: 0
   m_Name: Make Level Badinator (tm)
   m_TagString: Untagged
@@ -14951,6 +14952,7 @@ MonoBehaviour:
   enemiesParent: {fileID: 1264506657}
   background: {fileID: 435155977}
   badness: 3
+  endingDialogue: {fileID: 1067743335}
 --- !u!4 &1067743334
 Transform:
   m_ObjectHideFlags: 0
@@ -14966,6 +14968,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067743335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067743332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5778d0265ffd214eb1eb28e7feb11ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - I should really stop playing this game
+    - yeah
+    - I think I'll stop
+    - ...
+    - Game Over - Thanks for playing!
+  manager: {fileID: 0}
 --- !u!1 &1067970473
 GameObject:
   m_ObjectHideFlags: 0
