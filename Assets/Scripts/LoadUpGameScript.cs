@@ -64,6 +64,7 @@ public class LoadUpGameScript : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         additiveSceneChanger.ChangeScene();
+        additiveSceneChanger.LoadScene("GoodPatchNotes");
         desktop.SetActive(false);
     }
 }

@@ -59,14 +59,16 @@ public class EndLevel : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		PlayerController player = collision.attachedRigidbody.GetComponent<PlayerController>();
-		if (player != null) {
-			// End of level transition logic
-			Debug.Log("hit the end of the level!");
-			Application.targetFrameRate = -1;
-			sceneChanger.LoadScene();
-			timeStartEndLevel = Time.time;
-			isWaitingDialogue = true;
+		if (!(isWaitingDialogue || isDialogueOpen || isFading)) {
+			PlayerController player = collision.attachedRigidbody.GetComponent<PlayerController>();
+			if (player != null) {
+				// End of level transition logic
+				Debug.Log("hit the end of the level!");
+				Application.targetFrameRate = -1;
+				sceneChanger.LoadScene();
+				timeStartEndLevel = Time.time;
+				isWaitingDialogue = true;
+			}
 		}
 	}
 }
