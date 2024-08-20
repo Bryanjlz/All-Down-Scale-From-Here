@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+	public GameObject flagParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,13 @@ public class Checkpoint : MonoBehaviour
 		// If player
 		PlayerController player = other.GetComponent<PlayerController>();
 		if (player != null) {
-			player.UpdateRespawnPoint(transform.position);
+			if (!player.respawnPoint.Equals(transform.position)) {
+				if (GetComponent<SpriteRenderer>()?.enabled == true) {
+					Instantiate(flagParticles, transform);
+					GetComponent<Animator>().SetTrigger("collect");
+				}
+				player.UpdateRespawnPoint(transform.position);
+			}
 		}
 	}
 }
