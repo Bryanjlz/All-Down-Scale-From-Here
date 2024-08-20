@@ -780,7 +780,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 450}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -931,7 +931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 521602955363166708, guid: e3f86dbbe827d0b429790b7fd454d40d, type: 3}
       propertyPath: m_TagString
-      value: Fade
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1902502318253385774, guid: e3f86dbbe827d0b429790b7fd454d40d, type: 3}
       propertyPath: m_Pivot.x
