@@ -11,7 +11,7 @@ public class LevelBadinator : MonoBehaviour
 		public const int NO_GROUND = 2;
 		public const int NO_GUN = 3;
 		public const int BAD_GRAPHICS = 4;
-		public const int BAD_MOVEMENT = 5;
+		public const int BAD_FRAMERATE = 5;
 		public const int NO_CHECKPOINTS = 6;
 		public const int NO_GAME = 7;
 	}
@@ -58,9 +58,14 @@ public class LevelBadinator : MonoBehaviour
 			}
 			goodTiles.SetActive(false);
 			badTiles.SetActive(true);
+			foreach (Animator flagAnimator in checkpointParent.GetComponentsInChildren<Animator>()) {
+				if (flagAnimator.gameObject != startingCheckpoint) {
+					flagAnimator.SetBool("isBad", true);
+				}
+			}
 		}
-		if (badness >= LevelBadness.BAD_MOVEMENT) {
-
+		if (badness >= LevelBadness.BAD_FRAMERATE) {
+			Application.targetFrameRate = 15;
 		}
 		if (badness >= LevelBadness.NO_CHECKPOINTS) {
 			foreach (Transform transform in checkpointParent.transform) {
