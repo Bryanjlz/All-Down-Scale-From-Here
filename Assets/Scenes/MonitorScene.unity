@@ -2289,6 +2289,12 @@ MonoBehaviour:
     pitch: 1.35
     loop: 0
     source: {fileID: 0}
+  - name: flagCollect
+    clip: {fileID: 8300000, guid: 1b90b694bc87eae46b2dc93c357617fe, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1133453539
 GameObject:
   m_ObjectHideFlags: 0
